@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ServerEternalRelics.Models.OrderLine>
+
+@{
+    ViewBag.Title = "Shopping cart";
+}
+
+<div class="myContainer">
+
+    <div class="details">
+        <h2>Shopping cart</h2>
+    </div>
+
+    <table class="table">
+        <tr class="tableHeaderRow">
+            <th></th>
+            <th>
+                Product
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="margin:auto">
+                    <input value="1" min="1" max="@item.Amount" id="Delete@(item.Product.ProductID)" type="number" />
+                    <img style="width:40px;height:40px" src="@Url.Content("~/Images/remove.png")" onclick="Remove(@item.Product.ProductID, (Delete@(item.Product.ProductID).value))" alt="Image" />
+                </td>
+                <td>
+                    <a style="text-decoration:none" href='@Url.Action("Details", "product", new { id = item.Product.ProductID })'>
+
+                        @Html.DisplayFor(modelItem => item.Product.Name)<br />
+                        <img src="@Url.Content(item.Product.Image)" alt="Image" onerror="this.src='../Images/default.png'" />
+                        </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    €@Html.DisplayFor(modelItem => item.OrderLinePrice)
+                </td>
+            </tr>
+        }
+
+        @if (Session["TotalPrice"] != null)
+        {
+            <tr class="tableHeaderRow">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    Total:
+                </td>
+                <td>
+                    €@Session["TotalPrice"]
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                @*<td><button class="btn btn-primary" onclick="location.href='@Url.Action("Submit","SubmitOrder")'">Place order</button> </td>*@
+                <td><button class="btn btn-primary" onclick="location.href='@Url.Action("Index","SubmitOrder")';return false;">Place order</button> </td>
+
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">
+                    @Html.DisplayName("There are no items in your shopping cart")
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div id="removedFromCart" title="Success">
+    The product(s) has been removed from your shopping cart.
+</div>

@@ -1,0 +1,11 @@
+﻿/* Load custom fonts */
+
+@font-face{
+    font-family:'enchantedland';
+    src:url('../fonts/Enchanted Land.otf')format('opentype');
+}
+
+@font-face{
+    font-family:'blk';
+    src:url('../fonts/BLKCHCRY.TTF')format('truetype');
+}

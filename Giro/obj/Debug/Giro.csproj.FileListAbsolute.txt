@@ -1,0 +1,12 @@
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.dll.config
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.dll
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.pdb
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.dll
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.pdb
+D:\DropBox\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.csprojResolveAssemblyReference.cache
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.dll.config
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.dll
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\bin\Giro.pdb
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.csprojResolveAssemblyReference.cache
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.dll
+C:\Users\royst\Dropbox\Public\School 4rd year\Retakes\ServerEternalRelics\Giro\obj\Debug\Giro.pdb

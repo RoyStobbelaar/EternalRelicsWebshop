@@ -1,0 +1,85 @@
+﻿@model ServerEternalRelics.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="myContainer">
+
+    <div>
+
+        <h2 style="margin-left:30px;margin-bottom:30px;">@Html.DisplayName(Model.Name)</h2>
+        <table class="categoryTable">
+            <tr class="tableCategoryRow">
+
+                <td class="productCategory">
+                    Category:
+                </td>
+
+                @foreach (var item in Model.Categories)
+                {
+                    <td>
+                        <div class="productCategory"></div>
+
+                        @if (item.Name == "Epic")
+                        {
+                            <div class="productCategoryEpic">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </div>
+                        }
+                        else if (item.Name == "Legendary")
+                        {
+                            <div class="productCategoryLegendary">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="productCategory">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </div>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+    </div>
+
+    <div class="productInfo">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Image)</dt>
+            <dd><img src="@Url.Content(Model.Image)" alt="Image" onerror="this.src='../Images/default.png'" /></dd>
+            <dt>@Html.DisplayNameFor(model => model.CurrentPrice)</dt>
+            <dd>@Html.Raw(Model.OfferPrice)</dd>
+            <!-- Offer stuff -->
+            @if (Model.Offers.Count > 0)
+            {
+                <dt></dt>
+                <dd>Offer(s)</dd>
+                foreach (var item in Model.Offers)
+                {
+                    <dt>Offer date:</dt>
+                    <dd>@Html.DisplayTextFor(i => item.OfferDate)</dd>
+                    <dt>Offer text:</dt>
+                    <dd>@Html.DisplayTextFor(i => item.OfferText)</dd>
+                }
+            }
+            else
+            {
+                 <!-- Display normal info when there is no offer -->
+                <dt>@Html.DisplayNameFor(model => model.Description)</dt>
+                <dd>@Html.DisplayFor(model => model.Description)</dd>
+            }
+            <dt>
+            </dt>
+            <dd>
+                <input value="1" min="1" id="amount" type="number" style="width:80px" />
+                <button class="btn btn-primary" onclick="Add(@Model.ProductID, amount.value)">Add to cart</button>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div id="addedToCart" title="Success">
+    The product(s) has been added to your shopping cart.
+</div>

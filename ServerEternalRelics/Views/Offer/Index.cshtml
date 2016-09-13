@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ServerEternalRelics.Models.Offer>
+
+@{
+    ViewBag.Title = "Offers";
+}
+
+<div class="myContainer">
+
+    <div class="details">
+        <h2>Current offers</h2>
+    </div>
+
+    <table class="table">
+        <tr class="tableHeaderRow">
+            <th>
+                Product
+            </th>
+            <th style="background-color:none">
+                @Html.DisplayNameFor(model => model.OfferPrice)
+            </th>
+            <th style="background-color:none">
+                @Html.DisplayNameFor(model => model.DateFrom)
+            </th>
+            <th style="background-color:none">
+                @Html.DisplayNameFor(model => model.DateTill)
+            </th>
+            <th style="background-color:none">
+                @Html.DisplayNameFor(model => model.OfferText)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a style="text-decoration:none" href='@Url.Action("Details", "product", new { id = item.Product.ProductID })'>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+                        </p>
+                        <img src="@Url.Content(item.Product.Image)" alt="Image" onerror="this.src='../Images/default.png'" />
+                    </a>
+                </td>
+                <td>
+                    @Html.Raw(item.Product.OfferPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTill)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfferText)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

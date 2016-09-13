@@ -1,0 +1,14 @@
+﻿<div id="shoppingCartView" style="color:white">
+    <a href='@Url.Action("Index", "ShoppingCart")'>
+        <img style="width:40px;height:40px" src="@Url.Content("~/Images/shop.png")" alt="Image" />
+    </a>
+    €
+    @if (Session["TotalPrice"] == null)
+    {
+        @Html.DisplayName("€0.0")
+    }
+    else
+    {
+        @Html.DisplayFor(m => Session["TotalPrice"])
+    }
+</div>

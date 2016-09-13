@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ServerEternalRelics.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="myContainer">
+
+    <div class="details">
+        <h2>Products</h2>
+    </div>
+
+    <table class="table">
+        <tr class="tableHeaderRow">
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href='@Url.Action("Details", "product", new { id = item.ProductID })'>
+                        <img src="@Url.Content(item.Image)" onError="this.src='../Images/default.png'"/>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

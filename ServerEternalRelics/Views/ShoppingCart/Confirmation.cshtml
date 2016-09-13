@@ -1,0 +1,112 @@
+﻿@model ServerEternalRelics.Models.Order
+
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<div class="myContainer details">
+
+        <h2>Confirmation</h2>
+
+    Double check your information and order.<br />
+
+    <br />
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.FirstName)</div>
+        <div class="col-md-4">@Model.Customer.FirstName</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.LastName)</div>
+        <div class="col-md-4">@Model.Customer.LastName</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.Address)</div>
+        <div class="col-md-4">@Model.Customer.Address</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.Zipcode)</div>
+        <div class="col-md-4">@Model.Customer.Zipcode</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.Residence)</div>
+        <div class="col-md-4">@Model.Customer.Residence</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayNameFor(model => model.Customer.EmailAdres)</div>
+        <div class="col-md-4">@Model.Customer.EmailAdres</div>
+    </div>
+
+    <div class="orderCheck">
+
+
+        <h2 style="margin-left:20px;">Order</h2>
+
+
+        <table class="table">
+            <tr class="tableHeaderRow">
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Number
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+
+            @foreach (var line in Model.OrderLines)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => line.Product.Name)<br />
+                        <img src="@Url.Content(line.Product.Image)" alt="Image" onerror="this.src='../Images/default.png'" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => line.Product.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => line.Amount)
+                    </td>
+                    <td>
+                        €@Html.DisplayFor(modelItem => line.OrderLinePrice)
+                    </td>
+                </tr>
+            }
+
+            <tr class="tableHeaderRow">
+                <td></td>
+                <td></td>
+                <td>
+                    Total:
+                </td>
+                <td>
+                    €@Session["TotalPrice"]
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        if (Html.ValidationMessage("agree") != null)
+        {
+            <div>@Html.ValidationMessage("agree")</div>
+        }
+
+        <div class="checkbox">
+            <label>
+                @Html.CheckBox("agreed")
+                My information and order are alright, and i agree with the terms and conditions.
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Finish order</button>
+    }
+
+</div>

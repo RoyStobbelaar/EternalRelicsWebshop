@@ -1,0 +1,68 @@
+﻿@model ServerEternalRelics.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="myContainer">
+
+
+    <div class="details">
+
+        <dl class="dl-horizontal">
+            <dd>
+                <img src="@Url.Content(Model.Image)" alt="Image" />
+            </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+        </dl>
+    </div>
+    <!-- Show all products -->
+    <table class="table">
+
+        <tr class="tableHeaderRow">
+            <th>
+                Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>
+                    <a href='@Url.Action("Details", "product", new { id = product.ProductID })'>
+                        <img src="@Url.Content(product.Image)" onerror="this.src='../Images/default.png'" />
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayTextFor(model => product.Name)
+                </td>
+                <td>
+                    @Html.DisplayTextFor(model => product.Description)
+                </td>
+                <td>
+                    €
+                    @Html.DisplayName(product.CurrentPrice.ToString())
+                </td>
+            </tr>
+        }
+        @if (Model.Products.Count == 0)
+        {
+            <tr>
+                <td colspan="5" class="text-center">
+                    @Html.DisplayName("There are no products to display")
+                </td>
+            </tr>
+        }
+    </table>
+</div>

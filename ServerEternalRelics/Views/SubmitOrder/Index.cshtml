@@ -1,0 +1,50 @@
+﻿@model ServerEternalRelics.Models.Customer
+
+@{
+    ViewBag.Title = "Submit";
+}
+
+<div class="myContainer details">
+
+    <h2>Submit</h2>
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.FirstName)<br />
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.LastName)<br />
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.Address)<br />
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.Zipcode)<br />
+            @Html.EditorFor(model => model.Zipcode)
+            @Html.ValidationMessageFor(model => model.Zipcode)
+        </div>
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.Residence)<br />
+            @Html.EditorFor(model => model.Residence)
+            @Html.ValidationMessageFor(model => model.Residence)
+        </div>
+        <div class="form-group inputLarge">
+            @Html.LabelFor(model => model.EmailAdres)<br />
+            @Html.EditorFor(model => model.EmailAdres)
+            @Html.ValidationMessageFor(model => model.EmailAdres)
+        </div>
+        <div class="form-group Details">
+            <button class="btn btn-primary">Finish order</button>
+        </div>
+    }
+
+</div>

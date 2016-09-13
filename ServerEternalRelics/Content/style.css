@@ -1,0 +1,239 @@
+﻿/* Colors */
+/*
+    Blue0: #83C2FF
+    Blue1: #55acff
+    Blue2: #397cbb
+    Blue3: #274e75
+    Grey1: #f8f8f8
+    Grey2: #b7b7b7
+    Grey3: #7e7e7e
+    Grey4: #636363
+*/
+
+body {
+    background-color: #b7b7b7;
+    color: #274e75;
+    font-size:20px;
+}
+
+
+.myContainer {
+    width: 1080px;
+    background-color: #2E2E2E;
+
+    background: #2E2E2E; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#2E2E2E, #636363); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#2E2E2E, #636363); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#2E2E2E, #636363); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#2E2E2E, #636363); /* Standard syntax */
+
+    border: 1px solid black;
+    color: #83C2FF;
+    font-family:blk;
+
+}
+
+.details{
+    padding:10px;
+    margin:10px;
+}
+
+h2 {
+    color: #55acff;
+    font-family:enchantedland;
+    font-size:36px;
+}
+
+.productCategory{
+    float:left;
+    margin-left:30px;
+}
+
+.productCategoryEpic{
+    float:left;
+    margin-left:30px;
+    color:#9C39FF;
+}
+
+.productCategoryLegendary{
+    float:left;
+    margin-left:30px;
+    color:orange;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #f8f8f8;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #f8f8f8;
+}
+
+.navbar-inverse {
+    /*background: white;
+    background: -webkit-linear-gradient(#7e7e7e, #636363);
+    background: -o-linear-gradient(#7e7e7e, #636363);
+    background: -moz-linear-gradient(#7e7e7e, #636363);
+    background: linear-gradient(#7e7e7e, #636363);*/
+
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#7e7e7e, #b7b7b7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7e7e7e, #b7b7b7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7e7e7e, #b7b7b7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7e7e7e, #b7b7b7); /* Standard syntax */
+}
+
+.inputLarge{
+    width:100%;
+}
+
+.inputLarge input{
+    width:100%;
+    max-width:none;
+}
+
+.field-validation-error{
+    color:#f8f8f8;
+}
+
+
+.orderCheck{
+    margin-top:20px;
+    margin-bottom:20px;
+    /*padding:10px;*/
+    border:solid 1px black;
+    background-color:#2E2E2E;
+}
+
+.orderCheckTh{
+    background-color:none;
+}
+
+.tableHeaderRow{
+    background: #636363; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#7e7e7e, #636363); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7e7e7e, #636363); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7e7e7e, #636363); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7e7e7e, #636363); /* Standard syntax */
+
+    color:#83C2FF;
+    font-weight:bold;
+}
+
+.categoryTable{
+    /*margin-bottom:-21px;*/
+    width:100%;
+    height:50px;
+}
+
+.tableCategoryRow{
+    background: #636363; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#7e7e7e, #636363); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7e7e7e, #636363); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7e7e7e, #636363); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7e7e7e, #636363); /* Standard syntax */
+
+    color:#83C2FF;
+    font-weight:bold;
+    border-bottom:1px solid white;
+    border-top:1px solid white;
+    display:table-cell;
+}
+
+    .tableCategoryRow td {
+        width:100px;
+    }
+
+
+th {
+    /*background-color: #484848;*/
+    font-size:24px;
+    min-width:120px;
+}
+
+td {
+    /*background-color: #2E2E2E;*/
+    font-size:20px;
+}
+
+.productInfo{
+    padding-top:40px;
+}
+
+.productInfo dd{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.navbar{
+    border:none;
+    border-radius:0px;
+    margin-bottom:10px;
+    font-family:enchantedLand;
+    font-size:24px;
+}
+
+.navbar-brand{
+    font-size:36px;
+}
+
+.header{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-50px;
+    width:100%;
+    align-content:center;
+    text-align:center;
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#636363, #7e7e7e); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#636363, #7e7e7e); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#636363, #7e7e7e); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#636363, #7e7e7e); /* Standard syntax */
+}
+
+footer{
+    font-family:enchantedLand;
+    font-size:26px;
+    bottom:0px;
+    position:relative;
+    width:1080px;
+}
+
+.header h2{
+    text-align:center;
+    color:#43FFFF;
+}
+
+.titleText{
+    font-family:enchantedLand;
+    font-size:48px;
+    display:inline;
+}
+
+.subText{
+    font-family:enchantedLand;
+    font-size:24px;
+    margin-top:-30px;
+    margin-left:50px;
+}
+
+.ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable{
+        font-family:enchantedLand;
+    font-size:16px;
+}
+
+.ui-widget-content{
+    font-family:enchantedLand;
+    font-size:24px;
+}
+
+.ui-widget-header{
+    font-family:enchantedLand;
+    font-size:28px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close{
+    background-image:url("../Images/Light_Close.png");
+    background-color:none;
+}
